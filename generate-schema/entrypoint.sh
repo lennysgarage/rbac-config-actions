@@ -38,6 +38,10 @@ cd ..
 # generate schema 
 ./ksl-schema-language/bin/ksl "${INPUT_INPUT_FILES}" -o "${INPUT_OUTPUT_FILE_PATH}" 
 
+# remove ksl-schema-language repo
+rm -rf ksl-schema-language/
+
+
 # push the changes
 git add .
 timestamp=$(date -u)
