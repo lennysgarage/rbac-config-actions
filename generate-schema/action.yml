@@ -1,0 +1,24 @@
+name: Generate zed schema file
+description: generate zed schema file from ksl source files
+runs:
+  using: docker
+  image: Dockerfile
+  args:
+    - ${{ inputs.token }}
+    - ${{ inputs.branch_name }}
+    - ${{ inputs.input_files }}
+    - ${{ inputs.output_file_path }}
+  inputs:
+    token:
+      description: GitHub token
+      required: true
+    branch_name:
+      description: Git branch
+      required: false
+    input_files:
+      description: Input ksl files to generate schema
+      required: true
+    output_file_path:
+      description: Output file location for genrated zed schema
+      required: true
+
